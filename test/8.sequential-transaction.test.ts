@@ -10,7 +10,7 @@ describe("testing sequential transaction", () => {
           nama: "ucup",
           email: "ucupSurucup@gmail.com",
           phone: "22221122",
-        },
+        }
       }),
       // ini elemen yg kedua
       prismaClient.customer.create({
@@ -19,7 +19,7 @@ describe("testing sequential transaction", () => {
           nama: "budi",
           email: "Budi@gmail.com",
           phone: "2214556",
-        },
+        }
       }),
     ]);
 
