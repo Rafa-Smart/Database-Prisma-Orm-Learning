@@ -13,7 +13,7 @@ create table sample (
      )engine = innodb;
 
 
--- 2 membaut tabel customer (setelah buat model di prisma)
+-- 2. membaut tabel customer (setelah buat model di prisma)
 create table customer (
      id varchar(100) not null,
      nama VARCHAR(100) not null,

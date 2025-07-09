@@ -26,7 +26,7 @@
 // nah OLEH KARENA ITU KITA BUAT SAJA SATU KONEKSI
 // TAPI DIA AKAN DIPANGGIL BEBERAPA KALI UNTUK BANYAK FILE
 
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient, Prisma} from "@prisma/client";
 
 // nah disni kita juga buat configurasi si objek instancenya ini
 // kayak lognya, mengatur jumlah connector, dll

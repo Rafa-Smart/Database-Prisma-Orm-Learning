@@ -10,3 +10,10 @@ tapi kita juga bsia emngubahnya dnegna mengunakan @@map("nama_tabel_baru")
 
 dan setelah kita mengubah model, jangan lupa
 untuk generate prisma clientnya menggunakan perintah npx prisma generate
+
+setelah kita membaut generate kode dari model menggunaka npx prisa generatemaka secara otomatis ktia bisa melakukan operasi crud menggunakan prisma client
+
+jadi prisma client ini akna otomatis menggunakan nama model yg kita buatdalam 
+lowercase misla sebelumnya kita buat model Customer maka nanti akna dibuatkan field
+prismaClient.customer yang merupakan prisma model query
+yang dimana ini sudah banyak sekali method untuk melakukan perintah sql

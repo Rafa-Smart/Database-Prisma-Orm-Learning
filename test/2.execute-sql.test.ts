@@ -19,7 +19,7 @@ it("testing", async () => {
   const impact =
     await prismaClient.$executeRaw`insert into sample (id, nama) values (${id}, ${nama});`;
   console.log(impact); // 1
-  // yang terkena impack hanya 1 kolom
+  // yang terkena impack hanya 1 baris
 
   // jadi pertama itu dia log
   // prisma:query insert into sample (id, nama) values (?, ?);
@@ -48,12 +48,12 @@ it("insert banyak", async () => {
 });
 
 it.only("select data ", async () => {
-  interface TypeDatas {
+  interface TypeSample {
     id: number;
     nama: string;
   }
 
-  const datas: TypeDatas[] = await prismaClient.$queryRaw`select * from sample`;
+  const datas: TypeSample[] = await prismaClient.$queryRaw`select * from sample`;
   console.log(datas);
   // nah sekanag jadi hanya 1
   // jadi setiap kali mau eksekusi, itu kita pisahkan jadi
