@@ -40,7 +40,7 @@ describe("create - insert data menggunkaan prisma", () => {
     };
 
     // jadi Prisma ini saya ambil dari Prisma yang ada di '@prisma/client'
-
+    // dan ini itu otomais akan transaksi
     // jadi sebenarnya bsia pake Prisma.BatchPayLoad
     // atau langusng BatchPayLoad
     const dataImpact: Prisma.BatchPayload =
