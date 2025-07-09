@@ -1,0 +1,80 @@
+
+klo ada error di tsconfig.json, ada kemungkinan kita belum buat file tsnya yang sudah ada di srcjadi buat dulu file ts
+
+seperti yang sudah di jelaskan diawal bahwa kode typescript kita akan di compile ke javascript
+dan kita bisa menggunakan perintah berikut untuk mengcompile typescript ke javascript:
+npx tsc -> npmx typescript compiler
+perintah ini akan mengcompile semua file typescript yang ada di dalam folder src
+
+secara default semua filehasil kompilasi akan disimpan di lokasi yang sama dengan file typescriptnya
+jadi jika kita memiliki file src/1.say-hello.ts maka hasil kompilasinya akan
+disimpan di src/1.say-hello.js
+
+dan kadang programmer akan menyimpan hasilnya di folder dist (distribution)
+dan hasilnya akan di simpan di dalam folder dist
+jadi kita akan membuat folder dist sebagai output dari compile typescript ke javascript
+
+- "module": "esnext" --> ini untuk mengaktifkan module es6
+- "target": "esnext" --> ini untuk mengaktifkan fitur terbaru dari javascript
+- "moduleResolution": "node" --> ini untuk mengaktifkan module resolution nodejs
+- "outDir": "./dist" --> ini untuk menentukan output dari compile typescript ke javascript
+- "rootDir": "./src" --> ini untuk menentukan root directory dari source code typescript kita
+
+
+dan kenpa dipisah, karena agar hasil kode kompilasinya
+tidak terpush / commit di github
+
+
+3. dan secara default, semua file ts akan di coba di kompilasi oleh typesript, dan 
+kadang kadang kita tidak membutuhkan hal tersebut
+
+misal kita hanya ingin melakukan kompilasi untuk kode program, dan tidak butuh melakukan kompilasi untuk kode unit test
+jadi untuk kode testingnya ktia tidak akn di kompile
+
+maka kita bisa tambahkan exclude dan include di dalam file tsconfig.json
+jadi kita bisa menambahkan konfigurasi seperti berikut di dalam file tsconfig.json
+{
+
+  "include": ["src/**/*"],
+  "exclude": ["test/**/*"],
+
+    "compilerOptions": {
+    "module": "esnext",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "rootDir": "./src"
+  }
+}
+
+include = Menentukan file/folder mana yang akan dikompilasi oleh TypeScript.
+exclude = Menentukan file/folder mana yang harus diabaikan dan tidak dikompilasi oleh TypeScript.
+
+tapi saya ga mau jadi nanti di komen aja
+
+
+
+
+penjelasan saja
+bahwa "@babel/preset-typescript": "^7.27.1",
+
+itu cara kerjanya adaalh melakukan kompilasi nya dengna cara menghapus seluruh kode typescript
+dan menggantinya dengan kode javascript yang sudah di kompile oleh typescript
+
+oleh karena itu, error ts yang harusnya terjadi di unit test, kadang malah tidak terjadi
+karena kode tsnya sudah dihapus oleh babel
+
+oleh karena itu, kita perlu kita harus melakuakn pengecekan secara reguler menggunakan perintah
+npx tsc, untuk memastikan bahwa kode typescript kita tidak ada yang error
+
+
+
+penting, jadi agar kit bisa langusng running ts tanpa
+compilie dulu ke js itu pake
+module npm install -g ts-node typescript
+jadi nanti kalo mau jalanin tinggal
+
+npx ts-node namaFilenya
+
+tetep ga bisa hehe
+jadi harus di compile dulu

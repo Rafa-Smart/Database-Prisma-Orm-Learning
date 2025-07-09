@@ -1,0 +1,10 @@
+https://chatgpt.com/c/686d2e49-637c-8009-80fc-f38c28c0c76f
+jadi generate itu fungsinya adlah ketika kita sudah membuat model dan jua sudah terintegrasi
+dengan database, maka nanti akan dibuatkan PrismaClient
+menggunakan npx prisma generate
+
+dan secara default prisma generateini butuh model dulu untuk di generatejadi kita buat dulu model sample
+di file schema
+tapi sebelum itu baut dulu table di terminal di database belajar-database-prisma
+
+setalah itu akan ada folder .prisma/client di node_module -> dibawah .bin

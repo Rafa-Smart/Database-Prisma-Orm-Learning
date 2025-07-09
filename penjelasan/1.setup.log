@@ -1,0 +1,57 @@
+1. install jest 
+    npm install --save-dev jest @types/jest
+2. install babel, agar si jestnya bisa compile js modude terbaru
+    npm install --save-dev babel-jest
+    npm install --save-dev @babel/preset-env
+3. buat file jest config
+    npm create jest, lalu tmabahkan ini
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
+4. buat file babel
+    babel.config.json, lalu masukan ini
+
+
+install typescript
+setup projek typescript
+
+1. install dependencies typescript
+   npm install --save-dev typescript 
+   kita menginstall typescript sebagai devDependencies
+   karena ujung ujungnya kita akan mengcompile typescript ke javascript 
+2. setup typescript projects
+   npx tsc --init
+   ini akan membuat file tsconfig.json di root project kita
+   lalu kita ubah beberapa konfigurasi di tsconfig.json
+   - "module": "es6" --> ini untuk mengaktifkan module es6
+   -- yang dibawh ini ga wajib
+   - "target": "esnext" --> ini untuk mengaktifkan fitur terbaru dari javascript
+   - "moduleResolution": "node" --> ini untuk mengaktifkan module resolution nodejs
+   - "outDir": "./dist" --> ini untuk menentukan output dari compile typescript ke javascript
+   - "rootDir": "./src" --> ini untuk menentukan root directory dari source code typescript kita
+    https://jestjs.io/docs/getting-started
+    https://aka.ms/tsconfig
+
+    typescripthttps://jestjs.io/docs/getting-started
+ 3. menambah dependencies typescript
+    npm install --save-dev @babel/preset-typescript
+ 4. lalu di file babel.config.json kita tambahkan preset typescript
+   '@babel/preset-typescript'
+   jadinya gini
+   {    
+    "presets": [
+        "@babel/preset-env",
+        "@babel/preset-typescript"
+        ]
+    } 
+ 5. lalu install ts-jest
+    npm install --save-dev ts-jest
+ 6. install jest global 
+    npm install --save-dev @jest/globals
+7. install 
+    npm install --save-dev @types/jest --> jadi ga perlu import jest di setiap file test
+    dan auto complete
+
+   cara menjalanan testingnya
+   kita bsia pake npx jest atau npm test
+   atau kita bisa buat script sendiri di package.json
