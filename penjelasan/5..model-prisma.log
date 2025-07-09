@@ -1,0 +1,12 @@
+jadi setiap kali kita membaut tabel di database, maka kta perlu untuk membuat model di prisma
+hal ini agar kode manipulais data model tersebut di generate oleh si prisma cli sehingga
+bisa digunakan prisma client (yg punya banyak fungsi)
+
+jadi klao kita buat nama model, mak itu otomatis akan emnajdi
+nama tabel di databasenya
+tapi kita juga bsia emngubahnya dnegna mengunakan @@map("nama_tabel_baru")
+
+1. nama kolom yang boleh null mka emnggunakan ?
+
+dan setelah kita mengubah model, jangan lupa
+untuk generate prisma clientnya menggunakan perintah npx prisma generate
