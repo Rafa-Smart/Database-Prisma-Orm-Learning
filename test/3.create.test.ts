@@ -1,13 +1,10 @@
 import { Prisma } from "@prisma/client";
 import prismaClient from "../src/prisma";
+// https://www.prisma.io/docs/orm/reference/prisma-client-reference#model-queries
+// https://www.prisma.io/docs/orm/prisma-client/queries/crud#create
 console.clear();
 describe("create - insert data menggunkaan prisma", () => {
-  interface TypeCustomer {
-    id: string;
-    nama: string;
-    email: string;
-    phone: string;
-  }
+
 
   it("1. create single", async () => {
     // kalo kita pake create berati kita akan emngembalikan data yang baru dibuat
@@ -15,7 +12,7 @@ describe("create - insert data menggunkaan prisma", () => {
     // Prisma.Prisma__CustomerClient
     
 
-    const dataImpact:TypeCustomer = await prismaClient.customer.create({
+    const dataImpact:Rafa.TypeCustomer = await prismaClient.customer.create({
       data: {
         id: "1234",
         nama: "Rafa Khadafi",
