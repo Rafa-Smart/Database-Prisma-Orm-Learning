@@ -53,7 +53,7 @@ it.only("select data ", async () => {
     nama: string;
   }
 
-  const datas: TypeSample[] = await prismaClient.$queryRaw`select * from sample`;
+  const datas: Array<TypeSample> = await prismaClient.$queryRaw`select * from sample`;
   console.log(datas);
   // nah sekanag jadi hanya 1
   // jadi setiap kali mau eksekusi, itu kita pisahkan jadi

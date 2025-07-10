@@ -1,5 +1,5 @@
 import prismaClient from "../src/prisma";
-
+// https://chatgpt.com/c/686e757e-e444-8009-b4aa-7ddc09abf38f
 describe("testing transaction interactive", () => {
   // jadi deng nakita menggunaka interactive ini kita bisa
   // lebih flexible

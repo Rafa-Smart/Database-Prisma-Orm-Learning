@@ -6,7 +6,8 @@ import { PrismaClient } from "@prisma/client";
 // disini kita import dulu si prismaClientnnya
 // yang sadah punya struktur datbase kita, dan bisa dia manipulasi
 
-// Jadi setiap kali saya membuat schema dan ini sudah terintegrasi dengan database menggunakan migrate, saya bisa generate Prisma Client, yang fungsinya adalah:
+// Jadi setiap kali saya membuat schema dan ini sudah terintegrasi dengan database 
+// menggunakan migrate, saya bisa generate Prisma Client, yang fungsinya adalah:
 
 // Agar saya bisa memanipulasi database (CRUD) menggunakan perintah-perintah otomatis
 // yang sudah dibuat oleh Prisma Client.
@@ -24,7 +25,7 @@ import  prismaClient  from "../src/prisma";
 
 it("testing", async () => {
   // disini kita gunakan si prisma clientnya
-  //   untuk memebuat instance objek, agar bisa menggunakan seluruh fungsi dari si PrismaClient
+  // untuk memebuat instance objek, agar bisa menggunakan seluruh fungsi dari si PrismaClient
   // const prisma = new PrismaClient();
   // await prisma.$connect();
 
