@@ -114,7 +114,7 @@ it("pake contain,endwith, startwith", async () => {
   console.log(dataImpact);
 });
 
-it.only("operator and - or", async () => {
+it("operator and - or", async () => {
   // jadi ktia akn cari daa yang idnya itu 1 dan email harus
   // diakhiri dnegan .com
   // atau cari nama yg berawalan R
@@ -155,6 +155,33 @@ it.only("operator and - or", async () => {
   expect(dataImpact.length).toBe(3)
   console.log(dataImpact); // benar
 });
+
+
+it.only('paging', async () => {
+  // mmebuat pagination
+  // https://www.prisma.io/docs/orm/prisma-client/queries/pagination
+
+  const dataImpacts = await prismaClient.customer.findMany({
+    select:{
+      id:true,
+      nama:true
+    },
+    take:5,
+    skip:0,
+    orderBy:{
+      id:'asc'
+    }
+  })
+    // [
+    //   { id: '005', nama: 'budi' },
+    //   { id: '006', nama: 'UcupBenar' },
+    //   { id: '009', nama: 'udin' },
+    //   { id: '1234', nama: 'Rafa Khadafi' },
+    //   { id: '12543', nama: 'RizkyBenar' }
+    // ]
+
+  console.log(dataImpacts)
+})
 
 it("penjelasan", async () => {
   // const users = await prisma.user.findMany({
