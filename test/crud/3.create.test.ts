@@ -64,7 +64,5 @@ describe("create - insert data menggunkaan prisma", () => {
       expect(dataImpact.count).toBe(2)
   });
 
-  it('test create and return', async () => {
-    
-  })
+  // kalo untuk yg createAndReturn hanya ada di postgree, jadi ga bisa di mysql
 });
