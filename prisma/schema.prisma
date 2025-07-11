@@ -38,3 +38,13 @@ model Customer {
 }
 // lalu silahkan buat tabelnya di database
 // setelah itu jangan lupa npx prisma generate
+
+// 3. buat model products
+model product {
+  id Int @id
+  nama String
+  price Int
+  stock Int
+  category String
+  @@map("Products")
+}

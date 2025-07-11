@@ -23,3 +23,13 @@ create table customer (
      constraint emailUnique unique (email),
      constraint phoneUnique unique (phone)
 )engine = innodb;
+
+-- buat tabel products (lalu buat di schema)
+CREATE table products (
+     id int not null,
+     nama varchar(100) not null,
+     price int not null,
+     stock int not null,
+     category varchar(100) not null,
+     constraint primary_key_id primary key(id)
+)engine = innodb;
