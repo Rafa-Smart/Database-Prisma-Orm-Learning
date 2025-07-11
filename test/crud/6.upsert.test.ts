@@ -1,4 +1,4 @@
-import prismaClient from "../src/prisma";
+import prismaClient from "../../src/prisma";
 
 describe("testing update insert data", () => {
   it("testing 1", async () => {

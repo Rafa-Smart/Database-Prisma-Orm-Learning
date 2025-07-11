@@ -1,5 +1,5 @@
 import { Prisma } from "@prisma/client";
-import prismaClient from "../src/prisma";
+import prismaClient from "../../src/prisma";
 // https://www.prisma.io/docs/orm/reference/prisma-client-reference#model-queries
 // https://www.prisma.io/docs/orm/prisma-client/queries/crud#create
 console.clear();
@@ -63,4 +63,8 @@ describe("create - insert data menggunkaan prisma", () => {
 
       expect(dataImpact.count).toBe(2)
   });
+
+  it('test create and return', async () => {
+    
+  })
 });

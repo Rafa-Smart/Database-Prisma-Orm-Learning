@@ -1,4 +1,4 @@
-import prismaClient from "../src/prisma";
+import prismaClient from "../../src/prisma";
 
 describe("testing delete data", () => {
   // disini kita tambahkan dulu data yang salah

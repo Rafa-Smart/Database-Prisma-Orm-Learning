@@ -1,4 +1,4 @@
-import prismaClient from "../src/prisma";
+import prismaClient from "../../src/prisma";
 // https://www.prisma.io/docs/orm/reference/prisma-client-reference#model-queries
 // https://www.prisma.io/docs/orm/prisma-client/queries/crud#read
 describe("read data pake prisma", () => {

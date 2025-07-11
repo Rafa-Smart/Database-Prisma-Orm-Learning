@@ -1,4 +1,4 @@
-import prismaClient from "../src/prisma";
+import prismaClient from "../../src/prisma";
 
 describe("update data menggunakan prisma", () => {
   // aturan aturan menggunakan update data
