@@ -1,3 +1,8 @@
+
+jadi ketika kita sudah buat model dan database, yang sudah kita pastikan bahwa itu sadah sama sturkturnya
+maka nanti tinggal kita singkronkan antara database dengan si modelnya
+dengan menggunakan generate
+
 jadi setiap kali kita membaut tabel di database, maka kta perlu untuk membuat model di prisma
 hal ini agar kode manipulais data model tersebut di generate oleh si prisma cli sehingga
 bisa digunakan prisma client (yg punya banyak fungsi)
