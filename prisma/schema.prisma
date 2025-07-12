@@ -30,7 +30,7 @@ model sample {
 
 // buat model entity customer
 model Customer {
-  id String @id
+  id String @id 
   nama String 
   email String @unique
   phone String @unique

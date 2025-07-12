@@ -73,7 +73,7 @@ describe("testing agregate", () => {
     // jadi ga semua, makanya harus pake raw sql klo mau
 
     // disini kita akan agreagate rata rata berdasarkan category
-    // jadi kita akn ambil data price yang diatas price rata rata
+
 
     const dataImpact = await prismaClient.product.groupBy({
       by: ["category"],
