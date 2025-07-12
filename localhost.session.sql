@@ -69,3 +69,29 @@ create table wallet (
      constraint fk_customer foreign key (id_customer) references customer (id),
      constraint unique_customer unique key (id_customer)
 )engine = innodb;
+
+
+
+-- membuat one-to-one relations
+-- membaut tabel wallet
+create table wallet (
+     id VARCHAR(100) not null,
+     balance int not null,
+     id_customer VARCHAR(100) not null,
+     constraint pk_id primary key (id),
+     constraint fk_customer foreign key (id_customer) references customer (id),
+     constraint unique_customer unique key (id_customer)
+)engine = innodb;
+-- membuat one-to-many relations
+-- membaut tabel comment
+create table Comment (
+     id int not null auto_increment,
+     id_customer varchar(100),
+     title varchar(100) not null,
+     description text,
+     constraint pk_id primary key (id),
+     constraint fk_id_customer foreign key (id_customer) references customer (id)
+)engine = innodb;
+-- disini id_customer
+-- ga perlu pake uniq, biar bsiamany
+

@@ -41,6 +41,7 @@ model Customer {
   // disini wallet itu nullale, karea bisa saja customer ini
   // belum memiliki wallet
   wallet Wallet?
+  comment comment[]
   @@map("customer") // disini kita ubah nama modelnya
 }
 // lalu silahkan buat tabelnya di database
@@ -68,4 +69,14 @@ model Wallet {
   // di customer ini engga ?
   // karena setiap walet pasti milik satu customer
   // padahal bsia aja jadi coba kita membuatnya nullable
+}
+
+// membuat one-to-many relation
+// jadi kita buat tabel comment
+model comment {
+    id Int @db.Int @id @default(autoincrement())
+    title String @db.VarChar(100)
+    description String? @db.Text
+    id_customer String?
+    customer Customer? @relation(fields: [id_customer], references: [id])
 }
