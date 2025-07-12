@@ -22,3 +22,6 @@ jadi prisma client ini akna otomatis menggunakan nama model yg kita buatdalam
 lowercase misla sebelumnya kita buat model Customer maka nanti akna dibuatkan field
 prismaClient.customer yang merupakan prisma model query
 yang dimana ini sudah banyak sekali method untuk melakukan perintah sql
+
+
+nama model harus Besar diawal -> wajib

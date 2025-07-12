@@ -11,11 +11,15 @@ generator client {
   // output   = "../.prisma"
   // .tapi gausah, jadi kita baut default saja, jadi nanti bakal ada di fodler
   // node_module dibawah .bin
+
+
 }
 
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL") // dari file .env
+
+
 }
 
 // nah disii adalah tempat kita untuk mmebuat model / tabel
@@ -24,27 +28,43 @@ datasource db {
 
 model sample {
   id String @id
-  nama String 
+  nama String  @db.VarChar(100)
 }
 // setelah buat model, ketika npx prisma generate untuk membaut clienntnya
 
 // buat model entity customer
 model Customer {
   id String @id 
-  nama String 
-  email String @unique
-  phone String @unique
+  nama String  @db.VarChar(100)
+  email String @unique @db.VarChar(100)
+  phone String @unique @db.VarChar(100)
+  // disini wallet itu nullale, karea bisa saja customer ini
+  // belum memiliki wallet
+  wallet Wallet?
   @@map("customer") // disini kita ubah nama modelnya
 }
 // lalu silahkan buat tabelnya di database
 // setelah itu jangan lupa npx prisma generate
 
 // 3. buat model products
-model product {
+model Product {
   id Int @id
-  nama String
-  price Int
-  stock Int
-  category String
-  @@map("Products")
+  nama String @db.VarChar(100)
+  price Int @db.Int
+  stock Int @db.Int
+  category String @db.VarChar(100)
+  @@map("products")
+}
+
+// membuat one-to-one relation
+// membuat tabel wallet
+model Wallet {
+  id String @db.VarChar(100)
+  balance Int
+  id_customer String @db.VarChar(100)
+  customer Customer @relation(fields: [id_customer], references: [id])
+  @@unique([id_customer])
+  @@map("wallet")
+  // di customer ini engga ?
+  // karena setiap walet pasti milik satu customer
 }

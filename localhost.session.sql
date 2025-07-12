@@ -59,5 +59,13 @@ INSERT INTO products (id, nama, price, stock, category) VALUES
 (20, 'Sedotan', 300, 400, 'lain lain');
 
 
-
-
+-- membuat one-to-one relations
+-- membaut tabel wallet
+create table wallet (
+     id VARCHAR(100) not null,
+     balance int not null,
+     id_customer VARCHAR(100) not null,
+     constraint pk_id primary key (id),
+     constraint fk_customer foreign key (id_customer) references customer (id),
+     constraint unique_customer unique key (id_customer)
+)engine = innodb;

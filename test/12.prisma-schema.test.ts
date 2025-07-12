@@ -1,5 +1,9 @@
 describe('testing prisma schema', () => {
     it('penjelasan...', async () => {
+
+        // menggunakan enum juga bisa
+        // jaid sama aja kayak enum di typescript
+
         // api 
         // https://www.prisma.io/docs/orm/reference/prisma-schema-reference#model-field-type-modifiers
 
