@@ -59,12 +59,13 @@ model Product {
 // membuat one-to-one relation
 // membuat tabel wallet
 model Wallet {
-  id String @db.VarChar(100)
+  id String @db.VarChar(100) @id
   balance Int
-  id_customer String @db.VarChar(100)
-  customer Customer @relation(fields: [id_customer], references: [id])
+  id_customer String? @db.VarChar(100)
+  customer Customer? @relation(fields: [id_customer], references: [id])
   @@unique([id_customer])
   @@map("wallet")
   // di customer ini engga ?
   // karena setiap walet pasti milik satu customer
+  // padahal bsia aja jadi coba kita membuatnya nullable
 }
