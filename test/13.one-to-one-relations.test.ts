@@ -162,6 +162,8 @@ describe("testing", () => {
         // disini kita conek kin customer
         // yg belum punya wallet
         wallet: {
+          // dan nanti id_customer ini akna langusng otomatis
+          // diisi oleh si id dari si cstomer
           connect: {
             id: "076",
           },

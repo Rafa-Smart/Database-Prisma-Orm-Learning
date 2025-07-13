@@ -179,12 +179,18 @@ describe("testing", () => {
       })
     );
   });
-  it.only("test every", async () => {
+  it("test every", async () => {
+    // ini kenapa customer yg ga punya comment mlah terselect
+    // karena
+    // "Ambil semua customer yang SEMUA comment-nya memiliki huruf 'k' di title."
+    // TAPI!
+    // Jika customer tidak memiliki comment sama sekali, maka Prisma akan
+    // menganggap kondisi every SELALU TRUE karena tidak ada satupun comment yang MELANGGAR kondisi tersebut.
 
-    // ini masih salah ya
+    // 📢 Secara logika matematika, ini dikenal sebagai vacuous truth:
 
     const dataImpact = await prismaClient.customer.findMany({
-      // jadi some itu ngambil seluruh komen yg punya
+      // jadi every itu ngambil seluruh komen yg punya
       // huruf h di titlenya
 
       // nah karena semua ada maka bisa
@@ -208,5 +214,47 @@ describe("testing", () => {
         depth: 5,
       })
     );
+  });
+
+  it.only("sollusi masalah diatas", async () => {
+
+    // hati hati ketika pake and
+    // karena dia harus di array dan pake objek lagi didalmnya baru
+    // fieldnya
+
+    const dataImpact = await prismaClient.customer.findMany({
+      where: {
+        AND: [
+          {
+            comment: {
+              every: {
+                title: {
+                  contains: "k",
+                },
+              },
+            },
+          },
+          // {
+          // g bisa krn hnya bsia di relasi oneToOne utk IsNot ini
+          //   comment:{
+          //     isNot:null
+          //   }
+          // }
+          {
+            comment: {
+              // artinya minimal pada customer itu harus punya koment
+              // baru bisa di cek lagi apakah di koment itu ada huruf k
+              some: {},
+            },
+          },
+        ],
+      },
+      include:{
+        wallet:true,
+        comment:true
+      }
+    });
+
+    console.log(util.inspect(dataImpact, {depth:5}))
   });
 });

@@ -92,6 +92,7 @@ create table Comment (
      constraint pk_id primary key (id),
      constraint fk_id_customer foreign key (id_customer) references customer (id)
 )engine = innodb;
+select c.*, w.*, k.* from customer as c inner join wallet as w on (w.id_customer = c.id) inner join comment as k on (k.id_customer = c.id);
 -- disini id_customer
 -- ga perlu pake uniq, biar bsiamany
 
