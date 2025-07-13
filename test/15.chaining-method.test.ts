@@ -1,5 +1,5 @@
 import prismaClient from "../src/prisma";
-
+// https://chatgpt.com/c/68734fa6-4864-8009-88b9-2e6c9601ef4f
 describe("chaining method in prisma keren", () => {
   // jadi hanya bisa di relasi oneToOne atau pada
   // relasi lain tapi mengunakan findUnique / findFirst

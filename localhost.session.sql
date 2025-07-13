@@ -96,3 +96,15 @@ select c.*, w.*, k.* from customer as c inner join wallet as w on (w.id_customer
 -- disini id_customer
 -- ga perlu pake uniq, biar bsiamany
 
+-- membuat relations many-to-many
+-- dan membutuhkan tabel penghubug diengahnya
+-- kita buat tabel penghubung bernama likes
+-- antara customer dan products
+
+create table likes (
+     id_customer varchar(100), -- boleh null
+     id_product int,
+     constraint pk_customer_product primary key (id_customer,id_product),
+     constraint fk_customer_2 foreign key(id_customer) references customer (id),
+     constraint fk_product_2 foreign key (id_product) references products (id)
+)engine = innodb;

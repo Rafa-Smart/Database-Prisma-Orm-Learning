@@ -42,6 +42,7 @@ model Customer {
   // belum memiliki wallet
   wallet Wallet?
   comment comment[]
+  likes Likes[]
   @@map("customer") // disini kita ubah nama modelnya
 }
 // lalu silahkan buat tabelnya di database
@@ -54,6 +55,7 @@ model Product {
   price Int @db.Int
   stock Int @db.Int
   category String @db.VarChar(100)
+  likes Likes[]
   @@map("products")
 }
 
@@ -79,4 +81,19 @@ model comment {
     description String? @db.Text
     id_customer String?
     customer Customer? @relation(fields: [id_customer], references: [id])
+}
+
+
+// membuat relations many-to-many
+// dan membutuhkan tabel penghubug diengahnya
+// kita buat tabel penghubung bernama likes
+// antara customer dan product
+
+model Likes {
+  id_customer String @db.VarChar(100) 
+  id_product Int @db.Int
+  customer Customer? @relation(fields: [id_customer], references: [id]) 
+  product Product? @relation(fields: [id_product], references: [id])
+  @@id([id_customer,id_product])
+  @@map("likes")
 }
