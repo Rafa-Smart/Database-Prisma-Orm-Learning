@@ -108,3 +108,31 @@ create table likes (
      constraint fk_customer_2 foreign key(id_customer) references customer (id),
      constraint fk_product_2 foreign key (id_product) references products (id)
 )engine = innodb;
+
+SELECT 
+    customer.id AS id_customer,
+    customer.nama AS nama_customer,
+    products.id AS id_product,
+    products.nama AS nama_produk,
+    products.price,
+    products.stock,
+    products.category
+FROM likes
+JOIN customer ON likes.id_customer = customer.id
+JOIN products ON likes.id_product = products.id;
+
+select c.*, p.* from likes as l inner join customer as c on (l.id_customer = c.id) inner join products as p on (l.id_product = p.id);
+
+-- membuat relasi many-to-many secara implisit
+-- dengan syarat
+-- 1.nama tabel harus diawali dengan _
+-- 2.nama kolom harus A dan B, a -> kolom model 1, b -> kolom model 2
+-- 3.diurutkan secara asc berdasarkan nama modelnya
+
+create table _loves (
+     A VARCHAR(100) not NULL,
+     B int not null,
+     constraint pk_A_B primary key (A,B),
+     constraint fk_customer_3 foreign key (A) references customer (id),
+     constraint fk_products_3 foreign key (B) references products (id)
+)engine = innodb;

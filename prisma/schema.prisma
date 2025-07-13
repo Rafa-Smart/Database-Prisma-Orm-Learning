@@ -43,6 +43,7 @@ model Customer {
   wallet Wallet?
   comment comment[]
   likes Likes[]
+  loves Product[] @relation("loves")
   @@map("customer") // disini kita ubah nama modelnya
 }
 // lalu silahkan buat tabelnya di database
@@ -56,6 +57,7 @@ model Product {
   stock Int @db.Int
   category String @db.VarChar(100)
   likes Likes[]
+  loves Customer[] @relation("loves")
   @@map("products")
 }
 
@@ -97,3 +99,12 @@ model Likes {
   @@id([id_customer,id_product])
   @@map("likes")
 }
+
+// membuat relasi many-to-many implisit
+// jadi kita sudah buat tabelnya _loves di mysqlnya
+// dan disini kita ga perlu pake / buat model lovesnya
+// karena sudha di hanlde oleh si prismanya
+
+// jadi tinggal kasih aja di model modelnya
+// di customer loves products @relation("loves")
+// di product loves customer @relation("loves")
