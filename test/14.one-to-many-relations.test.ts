@@ -36,7 +36,7 @@ describe("testing", () => {
         data: {
           comment: {
             connect: {
-              id: 2,
+              id: 2, // harus uniq
             },
           },
         },

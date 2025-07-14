@@ -33,6 +33,6 @@ describe("chaining method in prisma keren", () => {
   });
 
   //   dan untuk yg relasi selain oneToOne uga bisa
-  // tapi saya alas demokannya
-//   karea sama aja, asal ga boleh pake findmany
+  // tapi saya malas demokannya
+//   karena sama aja, asal ga boleh pake findmany
 });
