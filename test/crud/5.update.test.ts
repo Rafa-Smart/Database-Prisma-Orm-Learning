@@ -50,7 +50,7 @@ describe("update data menggunakan prisma", () => {
     // jadi ini ditentukan secra alphabet, jadi '3' itu lebih besar dari '1234'
   });
 
-  it.only("update banyak data", async () => {
+  it("update banyak data", async () => {
     // nah jadi kalo update impact ini akna menjadi transaksi
     // karena banyak,
     // dan nanti where nya boleh data yang bukan uniq
@@ -71,4 +71,13 @@ describe("update data menggunakan prisma", () => {
 
     expect(dataImpact.count).toBe(1)
   });
+
+  it.only('test', async () => {
+    const hasil = prismaClient.siswa.create({
+      data: {
+          
+      }
+      
+    })
+  })
 });
