@@ -72,12 +72,12 @@ describe("update data menggunakan prisma", () => {
     expect(dataImpact.count).toBe(1)
   });
 
-  it.only('test', async () => {
-    const hasil = prismaClient.siswa.create({
-      data: {
+  // it.only('test', async () => {
+  //   const hasil = prismaClient.siswa.create({
+  //     data: {
           
-      }
+  //     }
       
-    })
-  })
+  //   })
+  // })
 });
